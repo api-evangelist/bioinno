@@ -1,23 +1,60 @@
 aid: bioinno
+
 name: BioInno
-description: 'BioInno is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'BioInno is a biotechnology-focused company identified in the API Evangelist harvest backlog. Public information is limited; the primary website https://bioinno.com responds with a JavaScript-rendered page, and no detailed corporate description or product information is readily available. The company appears to operate in the life sciences sector, but further specifics require direct inquiry or access to proprietary sources.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bioinno/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
+- Biotechnology
+- Life Sciences
+- Healthcare
+- Research
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/bioinno-llms.txt
+- type: Hosts
+  url: hosts/bioinno-hosts.yml
+- type: DomainSecurity
+  url: security/bioinno-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://bioinno.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The main website returns a JavaScript shell with no machine‑readable API documentation.
+  evidence:
+    - url: https://bioinno.com
+      status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
